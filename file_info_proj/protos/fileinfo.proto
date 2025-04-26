@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+service FileInfo {
+  rpc GetFileInfo (FileRequest) returns (FileMetadata);
+}
+
+message FileRequest {
+  string path = 1;
+}
+
+message FileMetadata {
+  string name = 1;
+  int64 size = 2;
+  string modified_time = 3;
+}
